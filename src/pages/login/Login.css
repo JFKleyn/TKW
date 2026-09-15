@@ -1,0 +1,323 @@
+/* =========================================
+   LOGIN PAGE
+========================================= */
+
+.login-page {
+  min-height: 100vh;
+  background: #f8f5f0;
+  color: #342d28;
+
+  position: relative;
+
+  padding: 50px 24px 80px;
+
+  box-sizing: border-box;
+
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.login-back {
+  position: absolute;
+
+  top: 40px;
+  left: 50px;
+
+  color: #8b643f;
+
+  text-decoration: none;
+
+  font-size: 12px;
+  letter-spacing: 2px;
+
+  transition: opacity 0.2s ease;
+}
+
+.login-back:hover {
+  opacity: 0.6;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.login-container {
+  width: 100%;
+  max-width: 520px;
+
+  margin: 0 auto;
+
+  padding-top: 110px;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.login-header {
+  text-align: center;
+
+  margin-bottom: 50px;
+}
+
+.login-eyebrow {
+  margin: 0 0 20px;
+
+  color: #a87a4d;
+
+  font-size: 11px;
+  font-weight: 400;
+
+  letter-spacing: 5px;
+
+  text-transform: uppercase;
+}
+
+.login-header h1 {
+  margin: 0;
+
+  color: #3f352d;
+
+  font-size: clamp(48px, 5vw, 64px);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  text-transform: uppercase;
+}
+
+.login-divider {
+  width: 55px;
+  height: 1px;
+
+  margin: 28px auto;
+
+  background: #b9834c;
+}
+
+.login-intro {
+  margin: 0;
+
+  color: #746b63;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 32px;
+}
+
+.login-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-field label {
+  margin-bottom: 10px;
+
+  color: #a87a4d;
+
+  font-size: 10px;
+  font-weight: 400;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.login-field input {
+  width: 100%;
+
+  padding: 12px 0;
+
+  border: none;
+  border-bottom: 1px solid #bdb2a7;
+  border-radius: 0;
+
+  background: transparent;
+
+  color: #342d28;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+
+  outline: none;
+
+  box-sizing: border-box;
+
+  transition: border-color 0.2s ease;
+}
+
+.login-field input:focus {
+  border-bottom-color: #a87038;
+}
+
+
+/* =========================================
+   AUTOFILL
+========================================= */
+
+.login-field input:-webkit-autofill,
+.login-field input:-webkit-autofill:hover,
+.login-field input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #342d28;
+
+  -webkit-box-shadow:
+    0 0 0 1000px #f8f5f0 inset;
+
+  transition:
+    background-color 5000s ease-in-out 0s;
+}
+
+
+/* =========================================
+   ERROR MESSAGE
+========================================= */
+
+.login-error {
+  margin: -10px 0 0;
+
+  color: #9c4f45;
+
+  font-size: 13px;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   LOGIN BUTTON
+========================================= */
+
+.login-submit {
+  width: 100%;
+
+  min-height: 62px;
+
+  margin-top: 5px;
+
+  padding: 17px 25px;
+
+  border: 1px solid #a87038;
+  border-radius: 2px;
+
+  background: #b77a3b;
+
+  color: #ffffff;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.login-submit:hover:not(:disabled) {
+  background: transparent;
+
+  color: #a87038;
+
+  border-color: #a87038;
+}
+
+.login-submit:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+  .login-back {
+    left: 30px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .login-page {
+    padding: 30px 22px 60px;
+  }
+
+  .login-back {
+    top: 25px;
+    left: 22px;
+
+    font-size: 10px;
+  }
+
+  .login-container {
+    padding-top: 100px;
+  }
+
+  .login-header {
+    margin-bottom: 40px;
+  }
+
+  .login-eyebrow {
+    font-size: 9px;
+
+    letter-spacing: 4px;
+  }
+
+  .login-header h1 {
+    font-size: 44px;
+  }
+
+  .login-intro {
+    font-size: 15px;
+  }
+
+  .login-form {
+    gap: 28px;
+  }
+
+  .login-field input {
+    font-size: 17px;
+  }
+
+  .login-submit {
+    min-height: 58px;
+  }
+}

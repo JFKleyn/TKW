@@ -14,11 +14,11 @@ export function HeroSection(){
           THE KLEYN WEDDING
         </h1>
         <div className="hero-buttons">
-            <Link to="/contact">
+            <Link to="/rsvp">
               <button>ENGAGEMENT PARTY RSVP</button>
             </Link>
             <Link to="/machine-listing">
-              <button className="product-button">GIFT THINGY</button>
+              <button className="product-button">GIFT REPOSITORY</button>
             </Link>
         </div>
       </div>

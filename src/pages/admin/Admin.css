@@ -1,0 +1,645 @@
+/* =========================================
+   ADMIN DASHBOARD
+========================================= */
+
+.admin-page {
+  min-height: 100vh;
+
+  padding: 55px 70px 90px;
+
+  background: #f8f5f0;
+  color: #342d28;
+
+  box-sizing: border-box;
+
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.admin-header {
+  width: 100%;
+  max-width: 1250px;
+
+  margin: 0 auto 55px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding-bottom: 30px;
+
+  border-bottom: 1px solid #d8cec4;
+}
+
+.admin-eyebrow {
+  margin: 0 0 14px;
+
+  color: #a87a4d;
+
+  font-size: 10px;
+  font-weight: 400;
+
+  letter-spacing: 5px;
+
+  text-transform: uppercase;
+}
+
+.admin-header h1 {
+  margin: 0;
+
+  color: #3f352d;
+
+  font-size: clamp(38px, 4vw, 56px);
+  font-weight: 400;
+
+  line-height: 1;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   LOGOUT BUTTON
+========================================= */
+
+.admin-logout {
+  padding: 12px 20px;
+
+  border: 1px solid #a87038;
+  border-radius: 2px;
+
+  background: transparent;
+  color: #a87038;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: 2.5px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.admin-logout:hover {
+  background: #a87038;
+  color: #ffffff;
+}
+
+
+/* =========================================
+   STAT CARDS
+========================================= */
+
+.admin-stats {
+  width: 100%;
+  max-width: 1250px;
+
+  margin: 0 auto 70px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid #d8cec4;
+  border-bottom: 1px solid #d8cec4;
+}
+
+.admin-stat {
+  min-height: 180px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  position: relative;
+}
+
+.admin-stat:not(:last-child) {
+  border-right: 1px solid #d8cec4;
+}
+
+.admin-stat span {
+  margin-bottom: 18px;
+
+  color: #a87a4d;
+
+  font-size: 9px;
+  font-weight: 400;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+.admin-stat strong {
+  color: #3f352d;
+
+  font-size: 60px;
+  font-weight: 400;
+
+  line-height: 1;
+}
+
+
+/* =========================================
+   GUEST LIST SECTION
+========================================= */
+
+.admin-guest-section {
+  width: 100%;
+  max-width: 1250px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.admin-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 28px;
+}
+
+.admin-section-heading p {
+  margin: 0 0 10px;
+
+  color: #a87a4d;
+
+  font-size: 9px;
+  font-weight: 400;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+.admin-section-heading h2 {
+  margin: 0;
+
+  color: #3f352d;
+
+  font-size: 34px;
+  font-weight: 400;
+
+  text-transform: uppercase;
+}
+
+.admin-section-heading > span {
+  padding-bottom: 4px;
+
+  color: #8a8179;
+
+  font-size: 14px;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================
+   TABLE WRAPPER
+========================================= */
+
+.admin-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  border-top: 1px solid #cfc3b7;
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.admin-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  background: transparent;
+}
+
+.admin-table th {
+  padding: 18px 20px;
+
+  border-bottom: 1px solid #d8cec4;
+
+  color: #a87a4d;
+
+  font-size: 9px;
+  font-weight: 400;
+
+  letter-spacing: 2.5px;
+
+  text-align: left;
+
+  white-space: nowrap;
+}
+
+.admin-table td {
+  padding: 22px 20px;
+
+  border-bottom: 1px solid #e2d9d0;
+
+  color: #4b433d;
+
+  font-size: 15px;
+
+  vertical-align: middle;
+}
+
+.admin-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.admin-table tbody tr:hover {
+  background: #f2ece5;
+}
+
+
+/* Guest name */
+
+.admin-table td:first-child {
+  color: #342d28;
+
+  font-size: 17px;
+}
+
+
+/* RSVP status */
+
+.admin-table td:nth-child(2) {
+  color: #8b643f;
+}
+
+
+/* Date */
+
+.admin-table td:nth-child(3) {
+  color: #8a8179;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.admin-empty {
+  padding: 60px 20px;
+
+  border-top: 1px solid #d8cec4;
+  border-bottom: 1px solid #d8cec4;
+
+  color: #8a8179;
+
+  font-size: 15px;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.admin-page > p {
+  margin-top: 150px;
+
+  color: #a87a4d;
+
+  font-size: 11px;
+
+  letter-spacing: 3px;
+
+  text-align: center;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .admin-page {
+    padding: 45px 35px 70px;
+  }
+
+  .admin-header {
+    margin-bottom: 45px;
+  }
+
+  .admin-stats {
+    margin-bottom: 55px;
+  }
+
+  .admin-stat {
+    min-height: 150px;
+  }
+
+  .admin-stat strong {
+    font-size: 50px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+  .admin-page {
+    padding: 30px 22px 60px;
+  }
+
+
+  /* HEADER */
+
+  .admin-header {
+    align-items: flex-start;
+
+    margin-bottom: 40px;
+    padding-bottom: 25px;
+  }
+
+  .admin-header h1 {
+    max-width: 250px;
+
+    font-size: 36px;
+    line-height: 1.05;
+  }
+
+  .admin-eyebrow {
+    font-size: 8px;
+
+    letter-spacing: 3px;
+  }
+
+  .admin-logout {
+    padding: 10px 12px;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+  }
+
+
+  /* STATS */
+
+  .admin-stats {
+    grid-template-columns: 1fr;
+
+    margin-bottom: 50px;
+  }
+
+  .admin-stat {
+    min-height: 115px;
+  }
+
+  .admin-stat:not(:last-child) {
+    border-right: none;
+    border-bottom: 1px solid #d8cec4;
+  }
+
+  .admin-stat span {
+    margin-bottom: 10px;
+  }
+
+  .admin-stat strong {
+    font-size: 44px;
+  }
+
+
+  /* GUEST LIST */
+
+  .admin-section-heading {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+  }
+
+  .admin-section-heading h2 {
+    font-size: 30px;
+  }
+
+  .admin-section-heading p {
+    text-align: left;
+  }
+
+  .admin-section-heading > span {
+    font-size: 14px;
+  }
+
+  
+
+
+  /* TABLE */
+
+  .admin-table {
+    min-width: 580px;
+  }
+
+  .admin-table th {
+    padding: 15px 14px;
+  }
+
+  .admin-table td {
+    padding: 18px 14px;
+
+    font-size: 14px;
+  }
+
+  .admin-table td:first-child {
+    font-size: 16px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .admin-page {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .admin-header h1 {
+    font-size: 32px;
+  }
+}
+
+/* =========================================
+   SEPARATE RSVP LISTS
+========================================= */
+
+.declined-section {
+  margin-top: 75px;
+}
+
+.status-attending {
+  color: #71816c;
+}
+
+.status-declined {
+  color: #9c6259;
+}
+
+@media (max-width: 650px) {
+  .declined-section {
+    margin-top: 55px;
+  }
+}
+
+/* =========================================
+   DASHBOARD FONT SIZE IMPROVEMENTS
+========================================= */
+
+/* THE KLEYN WEDDING */
+.admin-eyebrow {
+  font-size: 12px;
+  letter-spacing: 5px;
+}
+
+/* TOTAL RESPONSES / ATTENDING / DECLINED */
+.admin-stat span {
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+/* Large stat numbers */
+.admin-stat strong {
+  font-size: 64px;
+}
+
+/* ENGAGEMENT PARTY above each list */
+.admin-section-heading p {
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+/* ATTENDING / DECLINED headings */
+.admin-section-heading h2 {
+  font-size: 38px;
+}
+
+/* "1 guest", "0 guests" */
+.admin-section-heading > span {
+  font-size: 15px;
+}
+
+/* GUEST / RSVP / SUBMITTED table headings */
+.admin-table th {
+  font-size: 11px;
+  letter-spacing: 2.5px;
+}
+
+/* General table content */
+.admin-table td {
+  font-size: 16px;
+}
+
+/* Guest names */
+.admin-table td:first-child {
+  font-size: 18px;
+}
+
+/* Attending / Declined */
+.admin-table td:nth-child(2) {
+  font-size: 16px;
+}
+
+/* Submission date */
+.admin-table td:nth-child(3) {
+  font-size: 15px;
+}
+
+/* Empty state - "No guests have declined" */
+.admin-empty {
+  font-size: 16px;
+}
+
+/* Logout button */
+.admin-logout {
+  font-size: 11px;
+}
+
+
+/* =========================================
+   MOBILE FONT SIZES
+========================================= */
+
+@media (max-width: 650px) {
+  .admin-eyebrow {
+    font-size: 10px;
+  }
+
+  .admin-stat span {
+    font-size: 11px;
+  }
+
+  .admin-stat strong {
+    font-size: 50px;
+  }
+
+  .admin-section-heading p {
+    font-size: 10px;
+  }
+
+  .admin-section-heading h2 {
+    font-size: 32px;
+  }
+
+  .admin-section-heading > span {
+    font-size: 13px;
+  }
+
+  .admin-table th {
+    font-size: 10px;
+  }
+
+  .admin-table td {
+    font-size: 15px;
+  }
+
+  .admin-table td:first-child {
+    font-size: 17px;
+  }
+
+  .admin-table td:nth-child(2) {
+    font-size: 15px;
+  }
+
+  .admin-table td:nth-child(3) {
+    font-size: 14px;
+  }
+}
