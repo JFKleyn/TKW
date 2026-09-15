@@ -11,15 +11,26 @@ const Admin = () => {
 
   useEffect(() => {
     const checkUserAndLoadRsvps = async () => {
+      // Require a fresh admin login for this browser session
+      const adminLoggedIn = sessionStorage.getItem("adminLoggedIn");
+
+      if (adminLoggedIn !== "true") {
+        navigate("/login");
+        return;
+      }
+
+      // Make sure there is still a valid Supabase session
       const {
         data: { session },
       } = await supabase.auth.getSession();
 
       if (!session) {
+        sessionStorage.removeItem("adminLoggedIn");
         navigate("/login");
         return;
       }
 
+      // Load RSVPs
       const { data, error } = await supabase
         .from("rsvps")
         .select("*")
@@ -39,18 +50,19 @@ const Admin = () => {
   }, [navigate]);
 
   const handleLogout = async () => {
+    // Remove our temporary admin login
+    sessionStorage.removeItem("adminLoggedIn");
+
+    // Sign out of Supabase
     await supabase.auth.signOut();
+
     navigate("/login");
   };
 
   // Separate attending and declined guests
-  const attendingGuests = rsvps.filter(
-    (rsvp) => rsvp.attending === true
-  );
+  const attendingGuests = rsvps.filter((rsvp) => rsvp.attending === true);
 
-  const declinedGuests = rsvps.filter(
-    (rsvp) => rsvp.attending === false
-  );
+  const declinedGuests = rsvps.filter((rsvp) => rsvp.attending === false);
 
   // Dashboard totals
   const totalResponses = rsvps.length;
@@ -76,7 +88,6 @@ const Admin = () => {
 
   return (
     <main className="admin-page">
-
       {/* HEADER */}
       <header className="admin-header">
         <div>
@@ -84,19 +95,13 @@ const Admin = () => {
           <h1>RSVP Dashboard</h1>
         </div>
 
-        <button
-          type="button"
-          className="admin-logout"
-          onClick={handleLogout}
-        >
+        <button type="button" className="admin-logout" onClick={handleLogout}>
           LOG OUT
         </button>
       </header>
 
-
       {/* DASHBOARD TOTALS */}
       <section className="admin-stats">
-
         <div className="admin-stat">
           <span>TOTAL RESPONSES</span>
           <strong>{totalResponses}</strong>
@@ -111,13 +116,10 @@ const Admin = () => {
           <span>DECLINED</span>
           <strong>{declined}</strong>
         </div>
-
       </section>
-
 
       {/* ATTENDING GUESTS */}
       <section className="admin-guest-section">
-
         <div className="admin-section-heading">
           <div>
             <p>ENGAGEMENT PARTY</p>
@@ -130,14 +132,10 @@ const Admin = () => {
         </div>
 
         {attendingGuests.length === 0 ? (
-          <p className="admin-empty">
-            No guests have accepted yet.
-          </p>
+          <p className="admin-empty">No guests have accepted yet.</p>
         ) : (
           <div className="admin-table-wrapper">
-
             <table className="admin-table">
-
               <thead>
                 <tr>
                   <th>GUEST</th>
@@ -147,40 +145,27 @@ const Admin = () => {
               </thead>
 
               <tbody>
-
                 {attendingGuests.map((rsvp) => (
                   <tr key={rsvp.id}>
-
                     <td>
                       {rsvp.first_name} {rsvp.surname}
                     </td>
 
                     <td>
-                      <span className="status-attending">
-                        Attending
-                      </span>
+                      <span className="status-attending">Attending</span>
                     </td>
 
-                    <td>
-                      {formatDate(rsvp.submitted_at)}
-                    </td>
-
+                    <td>{formatDate(rsvp.submitted_at)}</td>
                   </tr>
                 ))}
-
               </tbody>
-
             </table>
-
           </div>
         )}
-
       </section>
-
 
       {/* DECLINED GUESTS */}
       <section className="admin-guest-section declined-section">
-
         <div className="admin-section-heading">
           <div>
             <p>ENGAGEMENT PARTY</p>
@@ -193,14 +178,10 @@ const Admin = () => {
         </div>
 
         {declinedGuests.length === 0 ? (
-          <p className="admin-empty">
-            No guests have declined.
-          </p>
+          <p className="admin-empty">No guests have declined.</p>
         ) : (
           <div className="admin-table-wrapper">
-
             <table className="admin-table">
-
               <thead>
                 <tr>
                   <th>GUEST</th>
@@ -210,36 +191,24 @@ const Admin = () => {
               </thead>
 
               <tbody>
-
                 {declinedGuests.map((rsvp) => (
                   <tr key={rsvp.id}>
-
                     <td>
                       {rsvp.first_name} {rsvp.surname}
                     </td>
 
                     <td>
-                      <span className="status-declined">
-                        Declined
-                      </span>
+                      <span className="status-declined">Declined</span>
                     </td>
 
-                    <td>
-                      {formatDate(rsvp.submitted_at)}
-                    </td>
-
+                    <td>{formatDate(rsvp.submitted_at)}</td>
                   </tr>
                 ))}
-
               </tbody>
-
             </table>
-
           </div>
         )}
-
       </section>
-
     </main>
   );
 };

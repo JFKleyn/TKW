@@ -29,6 +29,7 @@ const Login = () => {
       return;
     }
 
+    sessionStorage.setItem("adminLoggedIn", "true");
     navigate("/admin");
   };
 
@@ -78,15 +79,9 @@ const Login = () => {
             />
           </div>
 
-          {errorMessage && (
-            <p className="login-error">{errorMessage}</p>
-          )}
+          {errorMessage && <p className="login-error">{errorMessage}</p>}
 
-          <button
-            type="submit"
-            className="login-submit"
-            disabled={loading}
-          >
+          <button type="submit" className="login-submit" disabled={loading}>
             {loading ? "SIGNING IN..." : "SIGN IN"}
           </button>
         </form>
