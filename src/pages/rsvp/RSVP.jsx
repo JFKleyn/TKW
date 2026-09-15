@@ -106,7 +106,7 @@ const RSVP = () => {
                     onChange={handleChange}
                     required
                   />
-                  <span>Joyfully accepts</span>
+                  <span>Yes, I will be attending</span>
                 </label>
 
                 <label className="rsvp-option">
@@ -117,7 +117,7 @@ const RSVP = () => {
                     checked={formData.attending === "no"}
                     onChange={handleChange}
                   />
-                  <span>Regretfully declines</span>
+                  <span>No, I will not be attending</span>
                 </label>
               </fieldset>
 
@@ -136,7 +136,6 @@ const RSVP = () => {
 
             <p>
               Thank you, {formData.firstName}. Your response has been received.
-              We appreciate you letting us know.
             </p>
 
             <Link to="/gift-registry" className="registry-button">
