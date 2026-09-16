@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import RSVP from './pages/rsvp/RSVP';
 import Login from './pages/login/Login';
 import Admin from './pages/admin/Admin';
+import GiftRegistry from './pages/gift-registry/GiftRegistry';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <Route path='rsvp'  element={<RSVP />} />
       <Route path='login'  element={<Login />} />
       <Route path='admin'  element={<Admin />} />
+      <Route path='gift-registry'  element={<GiftRegistry />} />
       </Routes>
     </>
   )

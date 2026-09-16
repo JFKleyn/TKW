@@ -643,3 +643,719 @@
     font-size: 14px;
   }
 }
+
+/* =========================================
+   ADMIN DASHBOARD SECTIONS
+========================================= */
+
+.admin-dashboard-block,
+.admin-registry-section {
+  width: 100%;
+  max-width: 1250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* =========================================
+   DASHBOARD SECTION TITLE
+========================================= */
+
+.admin-dashboard-title {
+  margin-bottom: 32px;
+}
+
+.admin-dashboard-title p {
+  margin: 0 0 10px;
+
+  color: #a87a4d;
+
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.admin-dashboard-title h2 {
+  margin: 0;
+
+  color: #3f352d;
+
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 1;
+
+  text-align: left;
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   GIFT REGISTRY SECTION
+========================================= */
+
+.admin-registry-section {
+  margin-top: 110px;
+  padding-top: 65px;
+
+  border-top: 1px solid #cfc3b7;
+}
+
+
+/* =========================================
+   REGISTRY ERROR
+========================================= */
+
+.admin-registry-error {
+  width: 100%;
+
+  margin: -35px auto 45px;
+
+  padding: 14px 18px;
+
+  border: 1px solid #d6b7b0;
+
+  color: #9c4f45;
+
+  font-size: 14px;
+  text-align: center;
+}
+
+
+/* =========================================
+   RESTORE BUTTON
+========================================= */
+
+.admin-restore {
+  min-width: 110px;
+
+  padding: 10px 15px;
+
+  border: 1px solid #a87038;
+  border-radius: 0;
+
+  background: transparent;
+
+  color: #a87038;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.admin-restore:hover:not(:disabled) {
+  background: #a87038;
+
+  color: #ffffff;
+
+  scale: 1;
+}
+
+.admin-restore:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================
+   REGISTRY TABLE
+========================================= */
+
+.admin-registry-table td:nth-child(2) {
+  color: #8b643f;
+}
+
+.admin-registry-table td:nth-child(3) {
+  color: #8a8179;
+
+  font-size: 15px;
+}
+
+.admin-registry-table td:nth-child(4) {
+  width: 150px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+  .admin-dashboard-title {
+    margin-bottom: 25px;
+  }
+
+  .admin-dashboard-title p {
+    font-size: 10px;
+  }
+
+  .admin-dashboard-title h2 {
+    font-size: 32px;
+  }
+
+  .admin-registry-section {
+    margin-top: 75px;
+    padding-top: 50px;
+  }
+
+  .admin-registry-table {
+    min-width: 700px;
+  }
+
+  .admin-restore {
+    min-width: 100px;
+
+    font-size: 10px;
+  }
+
+}
+
+/* =========================================
+   REGISTRY HEADER + ADD GIFT BUTTON
+========================================= */
+
+.admin-registry-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
+
+  margin-bottom: 32px;
+}
+
+.admin-registry-header .admin-dashboard-title {
+  margin-bottom: 0;
+}
+
+.admin-add-gift {
+  min-width: 145px;
+
+  padding: 13px 20px;
+
+  border: 1px solid #a87038;
+  border-radius: 0;
+
+  background: #b77a3b;
+
+  color: #ffffff;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.admin-add-gift:hover {
+  background: transparent;
+
+  border-color: #a87038;
+
+  color: #a87038;
+
+  scale: 1;
+}
+
+
+/* =========================================
+   ADD GIFT MODAL OVERLAY
+========================================= */
+
+.admin-gift-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  background: rgba(39, 33, 28, 0.65);
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  overflow-y: auto;
+
+  z-index: 2000;
+}
+
+
+/* =========================================
+   MODAL
+========================================= */
+
+.admin-gift-modal {
+  width: 100%;
+  max-width: 650px;
+  max-height: calc(100vh - 60px);
+
+  position: relative;
+
+  padding: 50px 55px;
+
+  background: #f8f5f0;
+
+  overflow-y: auto;
+
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.22);
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.admin-gift-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+
+  width: auto;
+  min-width: 0;
+
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  color: #8b8178;
+
+  font-family: Arial, sans-serif;
+  font-size: 27px;
+  font-weight: 300;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.admin-gift-modal-close:hover {
+  border: none;
+  background: transparent;
+
+  color: #3f352d;
+
+  scale: 1;
+}
+
+
+/* =========================================
+   MODAL HEADER
+========================================= */
+
+.admin-gift-modal-header {
+  margin-bottom: 38px;
+
+  text-align: center;
+}
+
+.admin-gift-modal-header p {
+  margin: 0 0 12px;
+
+  color: #a87a4d;
+
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+}
+
+.admin-gift-modal-header h2 {
+  margin: 0;
+
+  color: #3f352d;
+
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1;
+
+  text-transform: none;
+}
+
+.admin-gift-modal-divider {
+  width: 45px;
+  height: 1px;
+
+  margin: 22px auto 0;
+
+  background: #b9834c;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.admin-gift-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 25px;
+}
+
+.admin-gift-form-row {
+  display: grid;
+  grid-template-columns: 1fr 0.65fr;
+
+  gap: 30px;
+}
+
+.admin-gift-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-gift-field label {
+  margin-bottom: 9px;
+
+  color: #a87a4d;
+
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.admin-gift-field input:not([type="file"]),
+.admin-gift-field textarea {
+  width: 100%;
+
+  padding: 10px 0;
+
+  border: none;
+  border-bottom: 1px solid #bdb2a7;
+  border-radius: 0;
+
+  background: transparent;
+
+  color: #342d28;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+
+  outline: none;
+
+  box-sizing: border-box;
+
+  transition: border-color 0.2s ease;
+}
+
+.admin-gift-field textarea {
+  min-height: 80px;
+
+  resize: vertical;
+
+  line-height: 1.5;
+}
+
+.admin-gift-field input:not([type="file"]):focus,
+.admin-gift-field textarea:focus {
+  border-bottom-color: #a87038;
+}
+
+
+/* =========================================
+   IMAGE UPLOAD
+========================================= */
+
+.admin-gift-file-input {
+  width: 100%;
+
+  padding: 13px;
+
+  border: 1px dashed #bdb2a7;
+
+  background: #f3eee8;
+
+  color: #6e6258;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+.admin-gift-file-input::file-selector-button {
+  margin-right: 15px;
+
+  padding: 9px 14px;
+
+  border: 1px solid #a87038;
+
+  background: transparent;
+
+  color: #a87038;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+
+  cursor: pointer;
+}
+
+.admin-gift-file-help {
+  margin-top: 8px;
+
+  color: #92877d;
+
+  font-size: 12px;
+}
+
+.admin-selected-image {
+  margin: -10px 0 0;
+
+  color: #71816c;
+
+  font-size: 13px;
+
+  text-align: left;
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.admin-gift-error {
+  margin: -5px 0 0;
+
+  padding: 12px 15px;
+
+  border: 1px solid #d6b7b0;
+
+  color: #9c4f45;
+
+  font-size: 13px;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   SUBMIT
+========================================= */
+
+.admin-gift-submit {
+  width: 100%;
+  min-height: 56px;
+
+  margin-top: 5px;
+
+  padding: 15px 20px;
+
+  border: 1px solid #b77a3b;
+  border-radius: 0;
+
+  background: #b77a3b;
+
+  color: #ffffff;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.admin-gift-submit:hover:not(:disabled) {
+  background: transparent;
+
+  border-color: #a87038;
+
+  color: #a87038;
+
+  scale: 1;
+}
+
+.admin-gift-submit:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+  .admin-registry-header {
+    align-items: stretch;
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+  .admin-add-gift {
+    width: 100%;
+  }
+
+  .admin-gift-modal-overlay {
+    align-items: flex-start;
+
+    padding: 15px;
+  }
+
+  .admin-gift-modal {
+    max-height: none;
+
+    margin: 15px 0;
+
+    padding: 48px 25px 30px;
+  }
+
+  .admin-gift-modal-header {
+    margin-bottom: 32px;
+  }
+
+  .admin-gift-modal-header h2 {
+    font-size: 38px;
+  }
+
+  .admin-gift-form-row {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+}
+
+/* =========================================
+   DELETE GIFT
+========================================= */
+
+.admin-delete {
+  min-width: 100px;
+
+  margin-left: 8px;
+  padding: 10px 15px;
+
+  border: 1px solid #a65f56;
+  border-radius: 0;
+
+  background: transparent;
+
+  color: #a65f56;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.admin-delete:hover:not(:disabled) {
+  background: #a65f56;
+  border-color: #a65f56;
+
+  color: #ffffff;
+
+  scale: 1;
+}
+
+.admin-delete:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   GIFT ACTIONS
+========================================= */
+
+.admin-gift-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  white-space: nowrap;
+}
+
+.admin-gift-actions .admin-restore,
+.admin-gift-actions .admin-edit,
+.admin-gift-actions .admin-delete {
+  min-width: 90px;
+  margin: 0;
+
+  padding: 10px 13px;
+
+  font-size: 10px;
+}
+
+
+/* EDIT */
+
+.admin-edit {
+  border: 1px solid #a87038;
+  border-radius: 0;
+
+  background: transparent;
+
+  color: #a87038;
+
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.admin-edit:hover {
+  background: #a87038;
+
+  color: #ffffff;
+
+  scale: 1;
+}
+
+
+/* GIVE ACTION COLUMN MORE ROOM */
+
+.admin-table th:last-child,
+.admin-table td:last-child {
+  width: 310px;
+}

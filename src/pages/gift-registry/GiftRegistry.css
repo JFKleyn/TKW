@@ -1,0 +1,732 @@
+.registry-page {
+  min-height: 100vh;
+  padding: 50px 60px 100px;
+
+  background: #f8f5f0;
+  color: #342d28;
+
+  position: relative;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   BACK
+========================================= */
+
+.registry-back {
+  position: absolute;
+  top: 40px;
+  left: 50px;
+
+  color: #8b643f;
+
+  font-size: 12px;
+  letter-spacing: 2px;
+
+  text-decoration: none;
+
+  transition: opacity 0.2s ease;
+}
+
+.registry-back:hover {
+  opacity: 0.6;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.registry-header {
+  width: 100%;
+  max-width: 720px;
+
+  margin: 0 auto 75px;
+  padding-top: 70px;
+
+  text-align: center;
+}
+
+.registry-eyebrow {
+  margin: 0 0 20px;
+
+  color: #a87a4d;
+
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 5px;
+
+  text-transform: uppercase;
+}
+
+.registry-header h1 {
+  margin: 0;
+
+  color: #3f352d;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(4rem, 6vw, 6rem);
+  font-weight: 400;
+
+  line-height: 0.95;
+  text-transform: none;
+}
+
+.registry-divider {
+  width: 55px;
+  height: 1px;
+
+  margin: 30px auto;
+
+  background: #b9834c;
+}
+
+.registry-intro {
+  max-width: 570px;
+
+  margin: 0 auto;
+
+  color: #746b63;
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.registry-grid {
+  width: 100%;
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 45px 30px;
+}
+
+
+/* =========================================
+   GIFT CARD
+========================================= */
+
+.gift-card {
+  min-width: 0;
+}
+
+.gift-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background: #eee7df;
+}
+
+.gift-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.gift-card:hover .gift-image img {
+  transform: scale(1.025);
+}
+
+
+/* =========================================
+   PLACEHOLDER
+========================================= */
+
+.gift-image-placeholder {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  background: #eee7df;
+
+  color: #a87a4d;
+
+  text-align: center;
+}
+
+.gift-image-placeholder span {
+  font-size: 11px;
+  letter-spacing: 4px;
+}
+
+
+/* =========================================
+   GIFT INFORMATION
+========================================= */
+
+.gift-content {
+  padding-top: 22px;
+}
+
+.gift-store {
+  margin: 0 0 9px;
+
+  color: #a87a4d;
+
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.gift-content h2 {
+  margin: 0 0 10px;
+
+  color: #3f352d;
+
+  font-size: 27px;
+  font-weight: 400;
+
+  line-height: 1.1;
+  text-align: left;
+}
+
+.gift-description {
+  margin: 0 0 13px;
+
+  color: #746b63;
+
+  font-size: 15px;
+  line-height: 1.6;
+
+  text-align: left;
+}
+
+.gift-price {
+  margin: 0;
+
+  color: #4b433d;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  text-align: left;
+}
+
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.gift-actions {
+  margin-top: 22px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 9px;
+}
+
+.gift-view,
+.gift-confirm {
+  width: 100%;
+  min-height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 13px 18px;
+
+  box-sizing: border-box;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.gift-view {
+  background: #b77a3b;
+
+  border: 1px solid #b77a3b;
+
+  color: #ffffff;
+
+  text-decoration: none;
+}
+
+.gift-view:hover {
+  background: #9f682f;
+
+  border-color: #9f682f;
+}
+
+.gift-confirm {
+  background: transparent;
+
+  border: 1px solid #b8aa9c;
+
+  border-radius: 0;
+
+  color: #6e6258;
+}
+
+.gift-confirm:hover {
+  background: #eee7df;
+
+  border-color: #a87a4d;
+
+  color: #8b643f;
+
+  scale: 1;
+}
+
+
+/* =========================================
+   PURCHASED
+========================================= */
+
+.gift-purchased {
+  opacity: 0.58;
+}
+
+.gift-purchased-overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(52, 45, 40, 0.45);
+}
+
+.gift-purchased-overlay span {
+  padding: 11px 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.75);
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.gift-purchased-status {
+  margin-top: 22px;
+
+  min-height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #b8aa9c;
+
+  color: #746b63;
+
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+
+/* =========================================
+   MESSAGES
+========================================= */
+
+.registry-message {
+  margin: 80px auto;
+
+  color: #8a8179;
+
+  font-size: 14px;
+  letter-spacing: 2px;
+
+  text-align: center;
+}
+
+.registry-error {
+  color: #9c6259;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+
+  .registry-page {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
+  .registry-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .registry-page {
+    padding: 30px 22px 70px;
+  }
+
+  .registry-back {
+    top: 25px;
+    left: 22px;
+
+    font-size: 10px;
+  }
+
+  .registry-header {
+    margin-bottom: 55px;
+    padding-top: 75px;
+  }
+
+  .registry-eyebrow {
+    font-size: 10px;
+    letter-spacing: 4px;
+  }
+
+  .registry-header h1 {
+    font-size: 4rem;
+  }
+
+  .registry-intro {
+    max-width: 360px;
+
+    font-size: 16px;
+  }
+
+  .registry-grid {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+
+  .gift-content h2 {
+    font-size: 28px;
+  }
+
+  .gift-description {
+    font-size: 16px;
+  }
+
+  .gift-price {
+    font-size: 17px;
+  }
+
+  .gift-view,
+  .gift-confirm {
+    min-height: 52px;
+
+    font-size: 11px;
+  }
+
+}
+
+/* =========================================
+   PURCHASE MODAL
+========================================= */
+
+.purchase-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px;
+
+  background: rgba(39, 33, 28, 0.6);
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  z-index: 1000;
+}
+
+.purchase-modal {
+  width: 100%;
+  max-width: 520px;
+
+  position: relative;
+
+  padding: 55px 55px 50px;
+
+  background: #f8f5f0;
+
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.18);
+
+  text-align: center;
+}
+
+
+/* CLOSE */
+
+.purchase-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+
+  width: auto;
+  min-width: 0;
+
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  color: #8b8178;
+
+  font-family: Arial, sans-serif;
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.purchase-modal-close:hover {
+  border: none;
+  background: transparent;
+
+  color: #3f352d;
+
+  scale: 1;
+}
+
+
+/* HEADER */
+
+.purchase-modal-eyebrow {
+  margin: 0 0 15px;
+
+  color: #a87a4d;
+
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+}
+
+.purchase-modal h2 {
+  margin: 0;
+
+  color: #3f352d;
+
+  font-size: 46px;
+  font-weight: 400;
+
+  line-height: 1;
+}
+
+.purchase-modal-divider {
+  width: 45px;
+  height: 1px;
+
+  margin: 23px auto;
+
+  background: #b9834c;
+}
+
+
+/* GIFT */
+
+.purchase-modal-gift {
+  margin: 0 0 15px;
+
+  color: #3f352d;
+
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.purchase-modal-text {
+  max-width: 390px;
+
+  margin: 0 auto 32px;
+
+  color: #746b63;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* FORM */
+
+.purchase-modal-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 25px;
+
+  text-align: left;
+}
+
+.purchase-modal-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.purchase-modal-field label {
+  margin-bottom: 9px;
+
+  color: #a87a4d;
+
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
+.purchase-modal-field input {
+  width: 100%;
+
+  padding: 11px 0;
+
+  border: none;
+  border-bottom: 1px solid #bdb2a7;
+  border-radius: 0;
+
+  background: transparent;
+
+  color: #342d28;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 19px;
+
+  outline: none;
+
+  transition: border-color 0.2s ease;
+}
+
+.purchase-modal-field input:focus {
+  border-bottom-color: #a87038;
+}
+
+
+/* ERROR */
+
+.purchase-modal-error {
+  margin: -8px 0 0;
+
+  color: #9c4f45;
+
+  font-size: 13px;
+
+  text-align: center;
+}
+
+
+/* CONFIRM */
+
+.purchase-modal-confirm {
+  width: 100%;
+  min-height: 55px;
+
+  padding: 15px 20px;
+
+  border: 1px solid #b77a3b;
+  border-radius: 0;
+
+  background: #b77a3b;
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.purchase-modal-confirm:hover:not(:disabled) {
+  background: transparent;
+
+  color: #a87038;
+
+  border-color: #a87038;
+
+  scale: 1;
+}
+
+.purchase-modal-confirm:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================
+   MOBILE MODAL
+========================================= */
+
+@media (max-width: 600px) {
+
+  .purchase-modal-overlay {
+    padding: 18px;
+  }
+
+  .purchase-modal {
+    max-width: 420px;
+
+    padding: 50px 28px 35px;
+  }
+
+  .purchase-modal h2 {
+    font-size: 40px;
+  }
+
+  .purchase-modal-gift {
+    font-size: 19px;
+  }
+
+  .purchase-modal-text {
+    font-size: 15px;
+  }
+
+}
